@@ -1,0 +1,1 @@
+i have built a website about a school named Hosanna Secondary School. This website has information about the school, its history, a downloadale PDF of the schools propectus as well as an application form
