@@ -1,0 +1,328 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Application Form | Hosanna Secondary School</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* GENERAL */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f7f6;
+    color: #333;
+}
+
+/* HEADER */
+.site-header {
+    background: #1f6b3a;
+    color: white;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+.school-logo {
+    width: 60px;
+    margin-right: 15px;
+}
+
+/* NAV */
+.navbar {
+    background: #145c2e;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    background: #27ae60;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* FORM */
+.form-wrapper {
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #1f6b3a;
+}
+
+fieldset {
+    border: 1px solid #ddd;
+    margin-bottom: 25px;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+legend {
+    font-weight: bold;
+    color: #1f6b3a;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+small {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.85rem;
+}
+
+.error {
+    color: #c0392b;
+}
+
+.success {
+    color: #27ae60;
+}
+
+/* PASSPORT PREVIEW */
+#photoPreview {
+    margin-top: 10px;
+    width: 120px;
+    height: 150px;
+    border: 1px solid #ccc;
+    display: none;
+    object-fit: cover;
+}
+
+/* BUTTONS */
+.form-actions {
+    text-align: center;
+    margin-top: 30px;
+}
+
+button {
+    background: #1f6b3a;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #27ae60;
+}
+
+.download-btn {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 12px 25px;
+    background: #34495e;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+}
+
+footer {
+    background: #1f6b3a;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="header-container">
+        <img src="Hosanna Secondary School Badge.png" class="school-logo">
+        <h1>Hosanna Secondary School</h1>
+    </div>
+
+    <nav class="navbar sticky">
+        <a href="home.html">Home</a>
+        <a href="academics.html">Academics</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<main class="form-wrapper">
+<h2>Student Application Form</h2>
+
+<form id="applicationForm">
+
+<!-- STUDENT DETAILS -->
+<fieldset>
+<legend>Student Details</legend>
+
+<label>Full Name *</label>
+<input type="text" id="name" required>
+<small id="nameMsg"></small>
+
+<label>Date of Birth *</label>
+<input type="date" id="dob" required>
+
+<label>Class Applying For *</label>
+<select id="classApplying" required>
+    <option value="">Select</option>
+    <option>S1</option><option>S2</option><option>S3</option>
+    <option>S4</option><option>S5</option><option>S6</option>
+</select>
+
+<label>Passport Photo *</label>
+<input type="file" id="photo" accept="image/*" required>
+<small id="photoMsg"></small>
+<img id="photoPreview">
+</fieldset>
+
+<!-- PARENT DETAILS -->
+<fieldset>
+<legend>Parent / Guardian Details</legend>
+
+<label>Parent / Guardian Name *</label>
+<input type="text" id="parent" required>
+
+<label>Phone Number *</label>
+<div class="phone-group">
+    <select id="countryCode">
+        <option value="+256">+256 (Uganda)</option>
+        <option value="+254">+254 (Kenya)</option>
+        <option value="+255">+255 (Tanzania)</option>
+        <option value="+1">+1 (USA)</option>
+        <option value="+44">+44 (UK)</option>
+    </select>
+    <input type="tel" id="phone" placeholder="Enter phone number" required>
+</div>
+<small id="phoneMsg"></small>
+</fieldset>
+
+<div class="form-actions">
+<button type="submit">Submit Application</button>
+<a href="application.html" download class="download-btn">
+Download PDF
+</a>
+</div>
+
+</form>
+</main>
+
+<footer>
+<p>&copy; 2026 Hosanna Secondary School</p>
+</footer>
+
+<script>
+// ELEMENT REFERENCES
+const nameInput = document.getElementById("name");
+const phoneInput = document.getElementById("phone");
+const photoInput = document.getElementById("photo");
+
+const nameMsg = document.getElementById("nameMsg");
+const phoneMsg = document.getElementById("phoneMsg");
+const photoMsg = document.getElementById("photoMsg");
+const preview = document.getElementById("photoPreview");
+
+/* REAL-TIME NAME VALIDATION */
+nameInput.addEventListener("input", () => {
+    if (nameInput.value.length < 3) {
+        nameMsg.textContent = "Name must be at least 3 characters.";
+        nameMsg.className = "error";
+    } else {
+        nameMsg.textContent = "Valid name ✔";
+        nameMsg.className = "success";
+    }
+});
+
+/* PHONE NUMBER VALIDATION */
+phoneInput.addEventListener("input", () => {
+    const phoneValue = phoneInput.value;
+    if (!phoneValue.startsWith("+") || phoneValue.length > 15) {
+        phoneMsg.textContent = "Enter a valid phone number with country code.";
+        phoneMsg.className = "error";
+    } else {
+        phoneMsg.textContent = "Valid phone number ✔";
+        phoneMsg.className = "success";
+    }
+});
+/* PASSPORT PHOTO PREVIEW & VALIDATION */
+photoInput.addEventListener("change", () => {
+    const file = photoInput.files[0];
+
+    if (!file) {
+        photoMsg.textContent = "Please upload a passport photo.";
+        photoMsg.className = "error";
+        return;
+    }
+
+    if (!file.type.startsWith("image/")) {
+        photoMsg.textContent = "Only image files are allowed.";
+        photoMsg.className = "error";
+        photoInput.value = "";
+        preview.style.display = "none";
+        return;
+    }
+
+    photoMsg.textContent = "Photo selected ✔";
+    photoMsg.className = "success";
+
+    const reader = new FileReader();
+    reader.onload = () => {
+        preview.src = reader.result;
+        preview.style.display = "block";
+    };
+    reader.readAsDataURL(file);
+});
+
+/* FORM SUBMISSION */
+document.getElementById("applicationForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    if (
+        nameInput.value.length < 3 ||
+        !phoneInput.value.startsWith("+") ||
+        phoneInput.value.length > 15 ||
+        photoInput.files.length === 0
+    ) {
+        alert("Please correct the highlighted errors before submitting.");
+        return;
+    }
+
+    alert("Application submitted successfully!");
+    this.reset();
+    preview.style.display = "none";
+    document.querySelectorAll("small").forEach(msg => msg.textContent = "");
+});
+</script>
+
+</body>
+</html>

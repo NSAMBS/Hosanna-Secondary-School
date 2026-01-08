@@ -1,0 +1,446 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: #f5f7fb;
+    color: #222;
+}
+
+/* Header & navigation */
+header {
+    background-color: #002b5c; /* deep blue */
+    color: #ffffff;
+    padding: 15px 5%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+}
+
+.motto {
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-top: 4px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+
+nav a:hover,
+nav a.active {
+    background-color: #ffcc00;
+    color: #002b5c;
+}
+
+/* Hero section */
+.hero {
+    background: linear-gradient(rgba(0, 43, 92, 0.7), rgba(0, 43, 92, 0.7)),
+                url("school.jpg") center/cover no-repeat;
+    color: #ffffff;
+    padding: 80px 5%;
+    text-align: left;
+}
+
+.hero-text {
+    max-width: 700px;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #ffcc00;
+    color: #002b5c;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #ffd633;
+}
+
+/* General sections */
+.info-section {
+    padding: 40px 5%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    background-color: #ffffff;
+}
+
+.card {
+    background-color: #f8fafc;
+    border-radius: 6px;
+    padding: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card ul {
+    padding-left: 18px;
+}
+
+/* Content sections */
+.page-container {
+    padding: 30px 5%;
+}
+
+.content-section {
+    margin-top: 25px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.03);
+}
+
+.content-section h3 {
+    margin-bottom: 10px;
+}
+
+.content-section p,
+.content-section ul,
+.content-section ol {
+    margin-top: 8px;
+}
+
+/* Grid layouts */
+.news-grid,
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.news-item {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.03);
+}
+
+/* Tables */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    font-size: 0.95rem;
+}
+
+.styled-table th,
+.styled-table td {
+    border: 1px solid #ddd;
+    padding: 8px 10px;
+}
+
+.styled-table th {
+    background-color: #002b5c;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Notes */
+.note {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Contact form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-form label {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 8px 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+    font-size: 0.95rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #002b5c;
+}
+
+/* Map placeholder */
+.map-placeholder {
+    background-color: #e3e7f0;
+    border: 1px dashed #99a3c2;
+    padding: 25px;
+    text-align: center;
+    color: #555;
+    border-radius: 6px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px 5%;
+    background-color: #002b5c;
+    color: #ffffff;
+    margin-top: 30px;
+    font-size: 0.9rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .hero {
+        text-align: left;
+        padding: 60px 5%;
+    }
+}
+.school-badge {
+    padding: 2px 8px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #239946; /* bright red-orange */
+    border-radius: 12px;
+    vertical-align: middle;
+    margin-left: 6px;
+    height: auto;
+    width: 120px;
+}
+.headteacher-card {
+    padding: 30px;
+}
+
+.headteacher-content {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.headteacher-image {
+    width: 90px;
+    height: auto;
+    border-radius: 10px;
+    border: 3px solid #1f6b3a;
+}
+
+/* Mobile friendly */
+@media (max-width: 768px) {
+    .headteacher-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .headteacher-image {
+        margin: 0 auto;
+    }
+}
+.school-badge {
+    padding: 2px 8px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #239946; /* bright green */
+    border-radius: 12px;
+    vertical-align: middle;
+    margin-left: 6px;
+    height: auto;
+    width: 120px;
+}
+/* GENERAL */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f7f6;
+    color: #333;
+}
+
+/* HEADER */
+.site-header {
+    background: #1f6b3a;
+    color: #fff;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+.school-logo {
+    width: 60px;
+    margin-right: 15px;
+}
+
+/* NAVBAR */
+.navbar {
+    background: #145c2e;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar a {
+    color: #fff;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    background: #27ae60;
+}
+
+/* STICKY */
+.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* FORM */
+.form-wrapper {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.form-wrapper h2 {
+    text-align: center;
+    color: #1f6b3a;
+}
+
+.form-intro {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* FIELDSETS */
+fieldset {
+    border: 1px solid #ddd;
+    margin-bottom: 25px;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+legend {
+    font-weight: bold;
+    color: #1f6b3a;
+    padding: 0 10px;
+}
+
+/* INPUTS */
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* ACTIONS */
+.form-actions {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.form-actions button {
+    background: #1f6b3a;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.form-actions button:hover {
+    background: #27ae60;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #34495e;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+}
+
+.download-btn:hover {
+    background: #2c3e50;
+}
+
+/* FOOTER */
+.site-footer {
+    background: #1f6b3a;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
+.site-footer p {
+    margin: 0;
+}
